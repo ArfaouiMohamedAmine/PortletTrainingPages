@@ -10,5 +10,10 @@
       <label>Trainging Page App</label>
       <page-reference>portal::global::training</page-reference>
     </node>
+        <node>
+      <name>fetch</name>
+      <label>fetch Page App</label>
+      <page-reference>portal::global::fetch</page-reference>
+    </node>
   </page-nodes>
 </node-navigation>

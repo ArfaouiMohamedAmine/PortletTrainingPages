@@ -11,16 +11,16 @@ const lang = eXo && eXo.env && eXo.env.portal && eXo.env.portal.language || 'en'
 
 const resourceBundleName = 'locale.addon.Training';
 const url = `${eXo.env.portal.context}/${eXo.env.portal.rest}/i18n/bundle/${resourceBundleName}-${lang}.json`;
-const appId = 'trainingPortletContainer';
+const appId = 'secondPortletContainer';
 
 
 export function init() {
   exoi18n.loadLanguageAsync(lang, url).then(i18n => {
     // init Vue app when locale ressources are ready
     Vue.createApp({
-      template: '<div><training-app></training-app><wireframe-app></wireframe-app></div>',
+      template: '<second-app></second-app>',
       i18n,
       vuetify,
-    }, `#${appId}`, 'Training');
+    }, `#${appId}`, 'Second');
   });
 }
