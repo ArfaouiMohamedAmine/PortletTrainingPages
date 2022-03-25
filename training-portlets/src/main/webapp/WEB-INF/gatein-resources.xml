@@ -26,6 +26,9 @@
         <module>eXoVueI18n</module>
       </depends>
     </module>
+    <depends>
+        <module>commonVueComponents</module>
+      </depends>
   </portlet>
 
   <portlet>
@@ -45,6 +48,9 @@
         <module>eXoVueI18n</module>
       </depends>
     </module>
+        <depends>
+        <module>commonVueComponents</module>
+      </depends>
   </portlet>  
   
   <portlet>
@@ -64,5 +70,8 @@
         <module>eXoVueI18n</module>
       </depends>
     </module>
+        <depends>
+        <module>commonVueComponents</module>
+      </depends>
   </portlet>
 </gatein-resources>
