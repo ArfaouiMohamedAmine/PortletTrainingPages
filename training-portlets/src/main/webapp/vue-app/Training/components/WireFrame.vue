@@ -53,12 +53,19 @@
                   counter
                   show-size
                   truncate-length="15" />
+
+                <v-container>
+                  <v-data-table
+                    :headers="headers"
+                    :data-to-insert="DataToInsert"
+                    class="elevation-1" />
+                </v-container>
               </v-col>
             </v-row>
-            <div
+            <v-btn
               @click="submit">
               Envoyer
-            </div>
+            </v-btn>
           </v-container>
         </v-form>
       </template>
@@ -148,6 +155,17 @@ export default {
   data () {
     return {
       e1: 1,
+      headers: [
+        
+        {text: 'body', value: 'body'},
+        {text: 'id', value: 'id'},
+        {text: 'title', value: 'title'},
+        {text: 'userId', value: 'userId'}
+
+        
+      ],
+      DataToInsert: [],
+
     };
   },
   methods: {
@@ -160,6 +178,19 @@ export default {
   ,
   mounted(){
     this.$refs.testDrawer.drawer = false ; 
+  },
+
+  created(){
+   
+    fetch('https://console.firebase.google.com/u/0/project/vuetraininghttp/database/vuetraininghttp-default-rtdb/data.json')
+      .then(response => response.json())
+      .then(data => {
+        this.DataToInsert = data ;
+        console.log(data);
+      }).catch(err => console.log(err))
+    ;
   }
+  
+
 };
 </script>
